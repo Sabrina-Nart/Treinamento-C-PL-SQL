@@ -1,9 +1,20 @@
-﻿using static System.Net.Mime.MediaTypeNames;
+﻿using Aula2;
+using static System.Net.Mime.MediaTypeNames;
 
-//Defina um valor, a partir de um cálculo 
+//Objetos mais complexos = pode ter blocos maiores de códigos
+
+Funcao geraAleatorios = new Funcao();
 
 int parada = 0;
 int contador = 0;
+
+int resultado = geraAleatorios.GeraAleatorios(parada, "Sabrina"); //Enviar dados para lá
+
+
+///////////////////////////
+
+
+//Defina um valor, a partir de um cálculo 
 
 do
 {
@@ -35,10 +46,9 @@ do
         contador = 1;
     }
 
-    int segundos = System.DateTime.Now.Second;
-    int valorFinal = segundos * contador;
+    int aleatorioGerado = geraAleatorios.GeraAleatorios(parada);
 
-    Console.WriteLine("Número aleatório: " + valorFinal);
+    Console.WriteLine("Número aleatório: " + aleatorioGerado);
 
     int erro;
     do
@@ -78,8 +88,7 @@ if (parada == 3)
             contador = 1;
         }
 
-        int segundos = System.DateTime.Now.Second;
-        int valorFinal = segundos * contador;
+        int valorFinal = geraAleatorios.GeraAleatorios(parada);
 
         switch (gerador)
         {
